@@ -1,0 +1,28 @@
+if __name__ == '__main__':
+    name_list = []
+    score_list = []
+    second_grade = []
+    for i in range(int(input())):
+        name = input()
+        score = float(input())
+        name_list.append(name)
+        score_list.append(score)
+
+    first = min(score_list)
+    count_1 = score_list.count(first)
+    for j in range(count_1):
+        index = score_list.index(first)
+        name_list.pop(index)
+        score_list.pop(index)
+        
+    second = min(score_list)
+    count_2 = score_list.count(second)
+
+    for j in range(count_2):
+        index = score_list.index(second)
+        second_grade.append(name_list[index])
+        name_list.pop(index)
+        score_list.pop(index)
+    second_grade.sort()
+    print(*second_grade,sep='\n')
+        
