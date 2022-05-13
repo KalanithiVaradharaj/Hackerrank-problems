@@ -1,0 +1,19 @@
+x = int(input())
+y = int(input())
+z = int(input())
+n = int(input())
+total_list = []
+list_element = []
+for i in range(x+1):
+    list_element.append(i)
+    for j in range(y+1):
+        list_element.append(j)
+        for k in range(z+1):
+            list_element.append(k)
+            a = list_element.copy()
+            if sum(a) != n:
+                total_list.append(a)
+            list_element.remove(k)
+        list_element.remove(j)
+    list_element.remove(i)
+print(total_list)
