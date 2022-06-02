@@ -1,0 +1,14 @@
+n = [i for i in input()]
+a = n[::-1]
+m = []
+for i in a:
+    if i.isalnum():
+        m.append(i)
+print(m)
+for i in n:
+    if not i.isalpha():
+        x = n.index(i)
+        m.insert(x,i)
+        n.remove(i)
+        n.insert(x,'+')
+print(*m,sep='')
