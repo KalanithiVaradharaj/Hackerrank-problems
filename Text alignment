@@ -1,0 +1,24 @@
+thickness = int(input())
+c = 'H'
+
+def top_cone(t,c):
+    for i in range(t):
+        print((c*i).rjust(t-1)+c+(c*i).ljust(t))
+
+def top_pillar(t,c):
+    for i in range(t+1):
+        print((c*t).center(t*2)+(c*thickness).center(t*6))
+
+def mid_belt(t,c):
+    for i in range((t+1)//2):
+        print((c*t*5).center(t*6))
+
+def bot_cone(t,c):
+    for i in range(t):
+        print(((c*(t-i-1)).rjust(t)+c+(c*(t-i-1)).ljust(t)).rjust(t*6))
+
+top_cone(thickness,c)
+top_pillar(thickness,c)
+mid_belt(thickness,c)
+top_pillar(thickness,c)
+bot_cone(thickness,c)
